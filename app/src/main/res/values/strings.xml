@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Assistencia App</string>
+
+    <string-array name="spinner">
+        <item>Troca de Aparelho</item>
+        <item>Nova instalação</item>
+        <item>Retirada de aparelho</item>
+    </string-array>
+</resources>
