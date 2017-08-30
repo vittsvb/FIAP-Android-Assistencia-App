@@ -23,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText cod;
     private Spinner spinner;
-    private CheckBox checkbox;
     private String spinnerSelect;
     private boolean isChecked;
 
@@ -50,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         cod = (EditText) findViewById(R.id.cod);
         spinner = (Spinner) findViewById(R.id.spinner);
         spinnerSelect = spinner.getSelectedItem().toString();
-        boolean isChecked = ((CheckBox) findViewById(R.id.checkbox)).isChecked();
+        isChecked = ((CheckBox) findViewById(R.id.checkbox)).isChecked();
 
     }
 
@@ -73,20 +72,18 @@ public class MainActivity extends AppCompatActivity {
         protected Integer doInBackground(Object... params) {
 
             try {
-                //Criar a URL (localhost é 10.0.2.2)
-                URL url = new URL("http://10.20.63.61:8080/AssistenciaApp/rest/chamado/");
+                URL url = new URL("http://192.168.25.78:8080/AssistenciaApp/rest/chamado");
                 //Obter uma conexão
                 HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
                 //Configurar a requisição
-                //Método HTTP -> GET (Busca)
                 connection.setRequestMethod("POST");
                 //Tipo de dado que será devolvido pelo webservice (JSON)
                 connection.setRequestProperty("Content-Type","application/json");
 
                 JSONStringer json = new JSONStringer();
                 json.object();
-                json.key("codigo").value(params[0]);
+                json.key("codigoFuncionario").value(params[0]);
                 json.key("descricao").value(params[1]);
                 json.key("finalizado").value(params[2]);
                 json.endObject();
