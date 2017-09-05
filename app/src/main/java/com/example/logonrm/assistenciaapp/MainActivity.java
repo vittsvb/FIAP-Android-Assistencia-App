@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.menu_chamado) {
-            Intent intent = new Intent(this, MainActivity.class);
+            Intent intent = new Intent(this, ChamadoActivity.class);
             startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
         protected Integer doInBackground(Object... params) {
 
             try {
-                URL url = new URL("http://192.168.25.78:8080/AssistenciaApp/rest/chamado");
+                URL url = new URL("https://assistenciaapi.herokuapp.com/rest/chamado");
                 //Obter uma conexão
                 HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 

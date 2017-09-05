@@ -27,6 +27,7 @@
         android:layout_margin="15dp"
         android:gravity="center"
         android:id="@+id/cod"
+        android:inputType="number"
         />
 
     <Spinner
