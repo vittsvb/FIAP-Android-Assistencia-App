@@ -22,12 +22,10 @@ public class Item {
 
     @Override
     public String toString() {
-        return "Item{" +
-                "codigo=" + codigo +
-                ", codigoFuncionario=" + codigoFuncionario +
-                ", finalizado=" + finalizado +
-                ", descricao='" + descricao + '\'' +
-                '}';
+        return  "Código: " + codigo +
+                ", Código do Funcionario: " + codigoFuncionario +
+                ", finalizado: " + finalizado +
+                ", descricao: " + descricao;
     }
 
     public int getCodigo() {
